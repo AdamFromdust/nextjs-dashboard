@@ -17,7 +17,7 @@ export async function authenticate(
     await signIn('credentials', formData);
   } catch (error) {
     if (error instanceof AuthError) {
-      switch (error.message) {
+      switch (error.name) {
         case 'CredentialsSignin':
           return 'Invalid credentials.';
         default:
